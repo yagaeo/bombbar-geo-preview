@@ -1,0 +1,132 @@
+main > .hero.compact {
+  padding-block: 12px 0;
+}
+
+.b05-guide {
+  border-top: 2px solid var(--yellow, #ffd200);
+  padding-block: clamp(24px, 4vw, 48px) clamp(36px, 5vw, 64px);
+  overflow-wrap: anywhere;
+  line-height: 1.6;
+}
+
+.b05-guide h2 {
+  margin: 2.1rem 0 .7rem;
+  font-size: clamp(1.38rem, 3.2vw, 1.85rem);
+  line-height: 1.2;
+}
+
+.b05-guide h2:first-child {
+  margin-top: 0;
+}
+
+.b05-guide h3 {
+  margin: 1.2rem 0 .35rem;
+  font-size: 1.125rem;
+  line-height: 1.35;
+}
+
+.b05-guide p {
+  max-width: 82ch;
+  margin: 0 0 .85rem;
+}
+
+.b05-guide a {
+  color: #543c00;
+  text-decoration: underline;
+  text-underline-offset: .15em;
+}
+
+.b05-guide a:hover {
+  text-decoration-thickness: 2px;
+}
+
+.b05-guide a:focus-visible {
+  outline: 2px solid #765400;
+  outline-offset: 3px;
+}
+
+.b05-price-note {
+  color: #534735;
+  font-size: .9rem;
+}
+
+.b05-comparison {
+  width: 100%;
+  margin: 1rem 0;
+  border-collapse: collapse;
+  font-size: .95rem;
+  font-variant-numeric: tabular-nums;
+  line-height: 1.4;
+}
+
+.b05-comparison caption {
+  margin-bottom: .5rem;
+  font-weight: 700;
+  text-align: left;
+}
+
+.b05-comparison th,
+.b05-comparison td {
+  padding: .7rem;
+  border-bottom: 1px solid #e8dfcc;
+  text-align: center;
+  vertical-align: middle;
+}
+
+.b05-comparison thead th {
+  background: var(--beige, #faf3e3);
+}
+
+.b05-comparison th:first-child {
+  width: 37%;
+  text-align: left;
+}
+
+.b05-field-label {
+  display: none;
+}
+
+@media (max-width: 750px) {
+  .b05-comparison,
+  .b05-comparison caption,
+  .b05-comparison tbody {
+    display: block;
+  }
+
+  .b05-comparison thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip-path: inset(50%);
+  }
+
+  .b05-comparison tbody tr {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: .3rem .6rem;
+    margin-bottom: .65rem;
+    padding: .65rem .7rem;
+    border: 1px solid #e8dfcc;
+    border-radius: 8px;
+    background: var(--beige, #faf3e3);
+  }
+
+  .b05-comparison tbody th {
+    grid-column: 1 / -1;
+    width: auto;
+  }
+
+  .b05-comparison tbody th,
+  .b05-comparison td {
+    padding: .15rem 0;
+    border: 0;
+    text-align: left;
+  }
+
+  .b05-field-label {
+    display: block;
+    color: #534735;
+    font-size: .8rem;
+  }
+}
