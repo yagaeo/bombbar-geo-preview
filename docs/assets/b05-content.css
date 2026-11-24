@@ -77,8 +77,11 @@ main > .hero.compact {
   background: var(--beige, #faf3e3);
 }
 
-.b05-comparison th:first-child {
+.b05-comparison thead th:first-child {
   width: 37%;
+}
+
+.b05-comparison th:first-child {
   text-align: left;
 }
 
