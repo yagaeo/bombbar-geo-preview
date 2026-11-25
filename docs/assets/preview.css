@@ -207,18 +207,40 @@ h1 { margin: 0; font-size: 30px; line-height: 1.2; font-weight: 700; }
 .pagination { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: .55rem; margin-top: 3rem; }
 .pagenav { display: flex; flex-wrap: wrap; gap: .3rem; }
 .pagenav button[aria-current=page] { background: var(--yellow); }
+.geo-table { inline-size: 100%; font-size: .95em; }
+@media (min-width: 768px) {
+  .geo-table {
+    inline-size: auto;
+    max-inline-size: min(100%, 82ch);
+  }
+}
 .faq-item {
   margin-block: .65rem;
-  padding: .65rem 1rem;
   border: 1px solid #e8dfcc;
   border-radius: 12px;
 }
-.faq-item summary { display: flex; align-items: baseline; gap: .65rem; }
-.faq-item summary::-webkit-details-marker { display: none; }
-.faq-item summary::before { content: "+"; color: #765400; }
-.faq-item[open] summary::before { content: "−"; }
-.faq-item summary h3 { margin: 0; }
-.faq-item[open] > p { margin: .55rem 0 0; }
+.faq-item > summary {
+  position: relative;
+  padding-block: .65rem;
+  padding-inline: 1rem 2.75rem;
+  border-radius: inherit;
+  list-style: none;
+}
+.faq-item > summary::-webkit-details-marker { display: none; }
+.faq-item > summary::before,
+.faq-item > summary::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-end: 1rem;
+  inline-size: .875rem;
+  border-block-start: 2px solid #765400;
+  transform: translateY(-50%);
+}
+.faq-item > summary::after { transform: translateY(-50%) rotate(90deg); }
+.faq-item[open] > summary::after { display: none; }
+.faq-item > summary h3 { margin: 0; }
+.faq-item > summary + p { margin: 0 1rem .75rem; }
 .footer { position: relative; background: var(--dark); color: var(--topbar-text); padding: 50px 0 90px; overflow-wrap: anywhere; }
 .footer-grid {
   display: grid;
