@@ -1,18 +1,30 @@
+.cert-hero {
+  background: var(--beige);
+}
+.cert-hero .wrap {
+  display: flex;
+  align-items: center;
+  min-height: 19rem;
+}
+.cert-hero h1 {
+  font-size: 3rem;
+}
 .b06-layout {
   display: grid;
-  grid-template-columns: minmax(168px, 218px) minmax(0, 1fr);
-  gap: clamp(24px, 4vw, 48px);
+  grid-template-columns: minmax(0, 33%) minmax(0, 1fr);
+  gap: 2rem;
   padding-block: 0 64px;
 }
 
 .b06-breadcrumbs {
-  padding-block: 18px 22px;
+  padding: 2rem .75rem 3rem;
 }
 
 .b06-service {
   align-self: start;
-  border: 1px solid #e8dfcc;
-  border-radius: 12px;
+  border: 1px solid #ececec;
+  border-radius: 9px;
+  box-shadow: 0 2px 10px #0001;
 }
 
 .b06-service summary,
@@ -24,7 +36,7 @@
 
 .b06-service nav a {
   display: block;
-  padding: .55rem .85rem;
+  padding: 1rem 2rem;
 }
 
 .b06-service a[aria-current="page"] {
@@ -35,10 +47,7 @@
 .b06-main {
   min-width: 0;
   overflow-wrap: anywhere;
-}
-
-.b06-main h1 {
-  margin-bottom: .65rem;
+  font-size: 16px;
 }
 
 .b06-lead,
@@ -219,7 +228,13 @@
   margin-top: .4rem;
 }
 
-@media (max-width: 690px) {
+@media (min-width: 1025px) {
+  .b06-service > summary { display: none; }
+}
+@media (max-width: 1024px) {
+  .cert-hero .wrap { min-height: 174px; }
+  .cert-hero h1 { font-size: 30px; }
+
   .b06-layout {
     grid-template-columns: minmax(0, 1fr);
     gap: .9rem;
@@ -237,4 +252,8 @@
   .b06-card dl div {
     display: block;
   }
+}
+
+@media (max-width: 767px) {
+  .cert-hero .wrap { min-height: 188px; }
 }

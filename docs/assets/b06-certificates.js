@@ -8,7 +8,7 @@ if (b06Register) {
   const empty = b06Register.querySelector('.b06-empty');
   const archive = b06Register.querySelector('.b06-archive');
   const sections = Array.from(b06Register.querySelectorAll('.b06-group'));
-  const width = window.matchMedia('(min-width: 691px)');
+  const width = window.matchMedia('(min-width: 1025px)');
 
   function normalize(value) {
     return value.toLocaleLowerCase('ru').replaceAll('ё', 'е').trim();
