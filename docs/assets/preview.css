@@ -210,8 +210,9 @@ h1 { margin: 0; font-size: 30px; line-height: 1.2; font-weight: 700; }
 .geo-table { inline-size: 100%; font-size: .95em; }
 @media (min-width: 768px) {
   .geo-table {
-    inline-size: auto;
-    max-inline-size: min(100%, 82ch);
+    inline-size: max-content;
+    max-inline-size: 100%;
+    overflow-wrap: normal;
   }
 }
 .faq-item {
