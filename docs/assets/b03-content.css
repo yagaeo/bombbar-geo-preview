@@ -1,14 +1,7 @@
-main > .hero {
-  padding-block: 12px 0;
-}
-
-main > .hero h1 {
-  margin: 0;
-}
-
 .b03-guide {
   border-top: 2px solid var(--yellow);
   padding-block: clamp(24px, 4vw, 48px) clamp(36px, 5vw, 64px);
+  font-size: 16px;
   line-height: 1.6;
   overflow-wrap: anywhere;
 }
@@ -89,7 +82,7 @@ main > .hero h1 {
   display: none;
 }
 
-@media (max-width: 690px) {
+@media (max-width: 767px) {
   .b03-nutrition,
   .b03-nutrition caption,
   .b03-nutrition tbody {

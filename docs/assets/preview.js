@@ -1,9 +1,18 @@
-const smallScreen = window.matchMedia('(max-width: 690px)');
+const smallScreen = window.matchMedia('(max-width: 1024px)');
 if (smallScreen.matches) {
   for (const section of document.querySelectorAll('.category-nav, .footer-group')) {
     section.open = false;
   }
 }
+for (const disclosure of document.querySelectorAll('.main-menu, .info-menu')) {
+  disclosure.addEventListener('keydown', event => {
+    if (event.key === 'Escape' && disclosure.open) {
+      disclosure.open = false;
+      disclosure.querySelector('summary').focus();
+    }
+  });
+}
+
 const catalog = document.querySelector('.catalog');
 if (catalog) {
   const size = 30;
@@ -65,17 +74,23 @@ if (catalog) {
       button.addEventListener('click', () => {
         startPage = activePage = page;
         redraw();
-        catalog.scrollIntoView();
+        list.querySelector('.card:not([hidden]) a')?.focus();
       });
       pagination.append(button);
     }
+    return visible;
   }
 
   function restart() {
     activePage = startPage = 1;
     redraw();
   }
-  more.addEventListener('click', () => { activePage += 1; redraw(); });
+  more.addEventListener('click', () => {
+    const next = activePage * size;
+    activePage += 1;
+    const visible = redraw();
+    visible[next]?.querySelector('a')?.focus();
+  });
   for (const field of fields) field.addEventListener('input', restart);
   sort.addEventListener('change', () => {
     if (sort.value === 'new') {
